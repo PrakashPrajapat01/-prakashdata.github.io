@@ -104,10 +104,42 @@ fetch('https://api.github.com/users/PrakashPrajapat01/repos?type=owner&sort=upda
 .then(r=>{if(!r.ok)throw new Error('GitHub API unavailable');return r.json()})
 .then(repos=>{const box=document.getElementById('repos');box.innerHTML='';repos.filter(r=>!r.private).forEach(r=>{const el=document.createElement('article');el.className='repo';const title=document.createElement('a');title.href=r.html_url;title.target='_blank';title.rel='noreferrer';title.innerHTML='<strong></strong> ↗';title.querySelector('strong').textContent=r.name;const desc=document.createElement('p');desc.textContent=r.description||'Public GitHub repository';const meta=document.createElement('small');meta.textContent=(r.language||'PROJECT')+' · '+(r.stargazers_count||0)+' STARS';el.append(title,desc,meta);box.append(el)});if(!box.children.length)box.textContent='No public repositories found yet.'})
 .catch(()=>{document.getElementById('repos').textContent='GitHub repositories could not be loaded right now. Visit GitHub profile.'});
-(function(){emailjs.init({publicKey:'UJeZ4ZSkDQqdHrfE5'});})();
-document.getElementById('contact-form').addEventListener('submit',async e=>{e.preventDefault();const f=e.currentTarget,s=document.getElementById('form-status');s.textContent='Sending…';try{await emailjs.send('service_i4aziol','template_rfhl0l7',{from_name:f.fullName.value,from_email:f.email.value,subject:f.subject.value,message:f.message.value,to_email:'prakshp365@gmail.com'});s.textContent='Thank you. Your message has been sent.';f.reset()}catch(err){s.textContent='Message could not be sent. Please email prakshp365@gmail.com directly.'}});
-</script>
+(function () {
+  emailjs.init({
+    publicKey: 'UJeZ4ZSkDQqdHrfE5'
+  });
+})();
 
+document.getElementById('contact-form').addEventListener('submit', async function (e) {
+  e.preventDefault();
+
+  const form = e.currentTarget;
+  const status = document.getElementById('form-status');
+
+  status.textContent = 'Sending your message...';
+
+  try {
+    await emailjs.send(
+      'service_i4aziol',
+      'template_rfhl0l7',
+      {
+        from_name: form.elements.namedItem('fullName').value,
+        from_email: form.elements.namedItem('email').value,
+        subject: form.elements.namedItem('subject').value,
+        message: form.elements.namedItem('message').value,
+        to_email: 'prakshp365@gmail.com'
+      }
+    );
+
+    status.textContent = 'Message sent successfully! Thank you for contacting me.';
+    form.reset();
+
+  } catch (error) {
+    console.error('EmailJS Error:', error);
+    status.textContent = 'Message could not be sent. Please email prakshp365@gmail.com directly.';
+  }
+});
+  </script>
 <!-- Visitor Counter -->
 <div style="text-align:center; padding:25px 10px; color:#a4b2c5;">
   <div style="font-size:13px; margin-bottom:10px;">
