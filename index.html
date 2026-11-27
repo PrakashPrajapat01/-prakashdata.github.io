@@ -122,13 +122,14 @@ document.getElementById('contact-form').addEventListener('submit', async functio
     await emailjs.send(
       'service_i4aziol',
       'template_rfhl0l7',
-      {
-        from_name: form.elements.namedItem('fullName').value,
-        from_email: form.elements.namedItem('email').value,
-        subject: form.elements.namedItem('subject').value,
-        message: form.elements.namedItem('message').value,
-        to_email: 'prakshp365@gmail.com'
-      }
+     {
+  from_name: form.elements.namedItem('fullName').value,
+  from_email: form.elements.namedItem('email').value,
+  topic: form.elements.namedItem('subject').value,
+  message: form.elements.namedItem('message').value,
+  source: 'Prakash Portfolio',
+  submitted_at: new Date().toLocaleString('en-IN')
+}
     );
 
     status.textContent = 'Message sent successfully! Thank you for contacting me.';
