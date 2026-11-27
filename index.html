@@ -106,7 +106,7 @@ fetch('https://api.github.com/users/PrakashPrajapat01/repos?type=owner&sort=upda
 .catch(()=>{document.getElementById('repos').textContent='GitHub repositories could not be loaded right now. Visit GitHub profile.'});
 (function () {
   emailjs.init({
-    publicKey: 'UJeZ4ZSkDQqdHrfE5'
+    publicKey: 'dJiBU6RuMkSwdY4Nl'
   });
 })();
 
@@ -120,7 +120,7 @@ document.getElementById('contact-form').addEventListener('submit', async functio
 
   try {
     await emailjs.send(
-      'service_i4aziol',
+      'service_i4aziov',
       'template_rfhl0l7',
      {
   from_name: form.elements.namedItem('fullName').value,
