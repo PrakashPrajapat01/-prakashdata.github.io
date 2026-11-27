@@ -106,4 +106,19 @@ fetch('https://api.github.com/users/PrakashPrajapat01/repos?type=owner&sort=upda
 .catch(()=>{document.getElementById('repos').textContent='GitHub repositories could not be loaded right now. Visit GitHub profile.'});
 (function(){emailjs.init({publicKey:'UJeZ4ZSkDQqdHrfE5'});})();
 document.getElementById('contact-form').addEventListener('submit',async e=>{e.preventDefault();const f=e.currentTarget,s=document.getElementById('form-status');s.textContent='Sending…';try{await emailjs.send('service_i4aziol','template_rfhl0l7',{from_name:f.fullName.value,from_email:f.email.value,subject:f.subject.value,message:f.message.value,to_email:'prakshp365@gmail.com'});s.textContent='Thank you. Your message has been sent.';f.reset()}catch(err){s.textContent='Message could not be sent. Please email prakshp365@gmail.com directly.'}});
-</script></body></html>
+</script>
+
+<!-- Visitor Counter -->
+<div style="text-align:center; padding:25px 10px; color:#a4b2c5;">
+  <div style="font-size:13px; margin-bottom:10px;">
+    THANK YOU FOR VISITING MY PORTFOLIO
+  </div>
+  <img
+    src="https://views-counter.vercel.app/badge?pageId=PrakashPortfolio&label=Visitors&type=unique&sessionExpire=30&leftColor=14263D&rightColor=61DDF5"
+    alt="Website Visitors"
+    style="height:25px;"
+  >
+</div>
+
+</body>
+</html>
