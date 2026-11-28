@@ -257,7 +257,30 @@ h2{font:800 clamp(28px,4vw,42px)/1.15 var(--font);letter-spacing:-1.2px;margin:1
   </video>
 </div>
 
-<div class="tags"><div class="tags"><span class="tag">Power BI</span><span class="tag">DAX</span><span class="tag">Interactive Slicers</span><span class="tag">Driver & Customer Ratings</span><span class="tag">Top 10 Drop Locations</span><span class="tag">KPI Toggle</span></div><div class="project-actions"><a class="btn primary" href="https://github.com/PrakashPrajapat01/OLA-Cabs-Booking-Analysis" target="_blank">View on GitHub ↗</a><a class="btn" href="https://github.com/PrakashPrajapat01/OLA-Cabs-Booking-Analysis" target="_blank">View Project Files ↗</a></div><p class="note">Animated dashboard preview — click the animation to open it separately. The project files and documentation are available on GitHub.</p></div><div class="card" style="margin-top:18px"><div class="project-head"><h3>Healthcare Analytics Dashboard</h3><span class="soon">COMING SOON</span></div><p class="muted">A healthcare-focused analytics project currently in progress. Detailed visuals, analysis and insights will be added when the project is complete.</p></div><div style="margin-top:24px"><h3>All Public GitHub Repositories</h3><p class="muted">This section loads your public repositories directly from GitHub. To hide a repository here, change it to Private on GitHub.</p><div id="repos" class="repo-grid"><p class="muted">Loading repositories…</p></div></div></div></section>
+<div class="tags">
+  <span class="tag">Power BI</span>
+  <span class="tag">DAX</span>
+  <span class="tag">Interactive Slicers</span>
+  <span class="tag">Driver & Customer Ratings</span>
+  <span class="tag">Top 10 Drop Locations</span>
+  <span class="tag">KPI Toggle</span>
+</div>
+
+<div class="project-actions">
+  <a class="btn primary" href="https://github.com/PrakashPrajapat01/OLA-Cabs-Booking-Analysis" target="_blank">View on GitHub ↗</a>
+  <a class="btn" href="https://github.com/PrakashPrajapat01/OLA-Cabs-Booking-Analysis" target="_blank">View Project Files ↗</a>
+</div>
+
+<p class="note">Interactive dashboard preview — click to play the video.</p>
+</div>
+
+<div class="card" style="margin-top:18px">
+  <div class="project-head">
+    <h3>Healthcare Analytics Dashboard</h3>
+    <span class="soon">COMING SOON</span>
+  </div>
+  <p class="muted">A healthcare-focused analytics project currently in progress. Detailed visuals, analysis and insights will be added when the project is complete.</p>
+</div><p class="muted">A healthcare-focused analytics project currently in progress. Detailed visuals, analysis and insights will be added when the project is complete.</p></div><div style="margin-top:24px"><h3>All Public GitHub Repositories</h3><p class="muted">This section loads your public repositories directly from GitHub. To hide a repository here, change it to Private on GitHub.</p><div id="repos" class="repo-grid"><p class="muted">Loading repositories…</p></div></div></div></section>
 <section id="journey"><div class="wrap"><div class="eyebrow">04 / Experience & Education</div><h2>The experience behind <em>my perspective.</em></h2><div class="grid"><div class="card"><div class="eyebrow">Professional Experience</div><div class="timeline"><h3>Registered Nurse</h3><b>Amritam Hospital & Multi-Speciality Center</b><p class="muted">Jodhpur, Rajasthan · April 2025 – Present</p><p class="muted">Patient care, clinical monitoring, accurate patient records, clinical documentation and coordination with healthcare professionals.</p></div></div><div class="card"><div class="eyebrow">Education</div><div class="timeline"><h3>B.Sc. Nursing</h3><b>Rajasthan University of Health Sciences (RUHS)</b><p class="muted">Jaipur, Rajasthan · Examination completed November 2024</p></div><div class="timeline"><h3>Data Analytics Training</h3><b>SkillCourse</b><p class="muted">Excel · Power Query · Power BI · SQL · Python — Learning completed</p></div></div></div></div></section>
 <section id="certifications"><div class="wrap"><div class="eyebrow">05 / Certifications & Learning</div><h2>Learning with <em>purpose.</em></h2><p class="muted">Select a certificate to view the full image.</p><div class="certs">
 <a class="cert" href="certificates/excel-certificate.png" target="_blank"><img src="certificates/excel-certificate.png" alt="Excel course certificate"><p>The Ultimate Excel Mastery Course</p></a>
@@ -364,7 +387,34 @@ document.getElementById('contact-form').addEventListener('submit', async functio
     status.textContent = 'Message could not be sent. Please email prakshp365@gmail.com directly.';
   }
 });
-  </script>
+const olaPreview = document.getElementById('olaPreview');
+const olaThumbnail = document.getElementById('olaThumbnail');
+const olaPlayButton = document.getElementById('olaPlayButton');
+const olaVideo = document.getElementById('olaVideo');
+
+// Screenshot par click karne se video play hogi
+olaPlayButton.addEventListener('click', function () {
+  olaThumbnail.style.display = 'none';
+  olaPlayButton.style.display = 'none';
+  olaVideo.style.display = 'block';
+
+  olaVideo.play().catch(function (error) {
+    console.error('Video playback failed:', error);
+    olaVideo.style.display = 'none';
+    olaThumbnail.style.display = 'block';
+    olaPlayButton.style.display = 'flex';
+  });
+});
+
+// Video khatam hone par screenshot wapas aayega
+olaVideo.addEventListener('ended', function () {
+  olaVideo.pause();
+  olaVideo.currentTime = 0;
+  olaVideo.style.display = 'none';
+  olaThumbnail.style.display = 'block';
+  olaPlayButton.style.display = 'flex';
+});
+</script>
 <!-- Visitor Counter -->
 <div style="text-align:center; padding:25px 10px; color:#a4b2c5;">
   <div style="font-size:13px; margin-bottom:10px;">
