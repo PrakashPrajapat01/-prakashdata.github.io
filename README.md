@@ -1,4 +1,4 @@
-# Prakash Kumar Prajapat — Portfolio Website
+# Prakash — Portfolio Website
 
 ## Edit your portfolio
 - Update `index.html` to change text, sections, links and project descriptions.
